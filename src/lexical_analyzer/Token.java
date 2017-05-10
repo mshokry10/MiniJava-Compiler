@@ -1,19 +1,25 @@
 package lexical_analyzer;
 
+import java.util.regex.Pattern;
+
 public class Token {
     private String type;
-    private String regex;
+    private Pattern pattern;
 
     Token(String type, String regex) {
         this.type = type;
-        this.regex = regex;
+        this.pattern = Pattern.compile(regex);
     }
 
     public String getType() {
         return type;
     }
 
+    public Pattern getPattern() {
+        return pattern;
+    }
+
     public boolean matches(String word) {
-        return word.matches(regex);
+        return pattern.matcher(word).matches();
     }
 }

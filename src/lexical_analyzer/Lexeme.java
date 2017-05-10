@@ -1,16 +1,16 @@
 package lexical_analyzer;
 
 public class Lexeme {
-    Token token;
+    String token_type;
     String content;
 
-    Lexeme(Token token, String content) {
-        this.token = token;
+    Lexeme(String type, String content) {
+        this.token_type = type;
         this.content = content;
     }
 
     @Override
     public String toString() {
-        return '<' + token.getType() + ", " + content + '>';
+        return '<' + token_type + ", " + content + '>';
     }
 }
