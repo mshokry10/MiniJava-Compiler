@@ -19,7 +19,4 @@ public class Token {
         return pattern;
     }
 
-    public boolean matches(String word) {
-        return pattern.matcher(word).matches();
-    }
 }
